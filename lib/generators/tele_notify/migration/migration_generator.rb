@@ -1,6 +1,6 @@
 require 'rails/generators/migration'
 
-module ActsAsVotable
+module TeleNotify
   class MigrationGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
 
@@ -24,7 +24,7 @@ module ActsAsVotable
 
     def create_migration_file
       if self.class.orm_has_migration?
-        migration_template 'migration.rb', 'db/migrate/acts_as_votable_migration.rb'
+        migration_template 'migration.rb', 'db/migrate/tele_notify_migration.rb'
       end
     end
   end
