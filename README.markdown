@@ -19,7 +19,7 @@ And follow that up with a ``bundle install``.
 TeleNotify uses a votes table to store all voting information.  To
 generate and run the migration just use.
 
-    rails generate acts_as_votable:migration
+    rails generate tele_notify:migration
     rake db:migrate
 
 ## Testing

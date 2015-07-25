@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "acts_as_votable/version"
+require "tele_notify/version"
 
 Gem::Specification.new do |s|
   s.name        = "tele_notify"
