@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "acts_as_votable/version"
 
 Gem::Specification.new do |s|
-  s.name        = "acts_as_votable"
-  s.version     = ActsAsVotable::VERSION
+  s.name        = "tele_notify"
+  s.version     = TeleNotify::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ryan"]
-  s.email       = ["ryanto"]
-  s.homepage    = "http://rubygems.org/gems/acts_as_votable"
+  s.authors     = ["ppati000", "Ryan"]
+  s.email       = ["ppati000@me.com"]
+  s.homepage    = "http://rubygems.org/gems/tele_notify"
   s.summary     = %q{Rails gem to allowing records to be votable}
   s.description = %q{Rails gem to allowing records to be votable}
 
