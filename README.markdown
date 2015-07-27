@@ -1,6 +1,6 @@
 # TeleNotify
 
-TeleNotify description
+NOTE: Under development. None of these instructions are working yet.
 
 ## Installation
 
