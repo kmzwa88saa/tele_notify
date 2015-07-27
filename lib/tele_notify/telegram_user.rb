@@ -15,11 +15,11 @@ module TeleNotify
     end
 
     def self.get_updates
-      response = RestClient.get(@url + "getUpdates")
-      if response["ok"]
-        puts response
-        puts response["result"]
-        updates = response["result"]
+      response = JSON.parse(RestClient.get(@url + "getUpdates"))
+      puts response
+      if response[:ok]
+        puts response[:result]
+        updates = response[:result]
         updates.each do |update|
           self.class.create( { telegram_user_id: update["message"]["from"]["id"], first_name: update["message"]["from"]["first_name"] } )
         end
@@ -27,8 +27,8 @@ module TeleNotify
     end
 
     def self.send_message
-      self.class.all.each do |user|
-        RestClient.post(@url + "sendMessage", chat_id: user.telegram_user_id, text: "Test")
+      TeleNotify::TelegramUser.all.each do |user|
+        RestClient.post(@url + "sendMessage", chat_id: user.telegram_id, text: "Test")
       end
     end
 
