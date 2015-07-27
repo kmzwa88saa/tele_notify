@@ -4,6 +4,7 @@ module TeleNotify
   class TelegramUser < ::ActiveRecord::Base
 
     validates_presence_of :telegram_id
+    validates_uniqueness_of :telegram_id
 
     def self.configure_token(token)
       if token =~ /^[0-9]+:[\w-]+$/
@@ -15,13 +16,12 @@ module TeleNotify
     end
 
     def self.get_updates
-      response = JSON.parse(RestClient.get(@url + "getUpdates"))
+      response = JSON.parse(RestClient.get(@url + "getUpdates"), { symbolize_names: true })
       puts response
       if response[:ok]
-        puts response[:result]
         updates = response[:result]
         updates.each do |update|
-          self.class.create( { telegram_user_id: update["message"]["from"]["id"], first_name: update["message"]["from"]["first_name"] } )
+          self.create( { telegram_id: update[:message][:from][:id], first_name: update[:message][:from][:first_name] } )
         end
       end
     end
