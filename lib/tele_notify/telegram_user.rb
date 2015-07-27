@@ -12,6 +12,7 @@ module TeleNotify
       if token =~ /^[0-9]+:[\w-]+$/ #hacker proof
         @@token = token
         @@url = "https://api.telegram.org/bot" + token + "/"
+        RestClient.post(@@url + "setWebhook", { url: "https://42ebfa35.ngrok.io/route" })
       else
         raise "Invalid token."
       end
