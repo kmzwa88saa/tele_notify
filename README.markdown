@@ -1,8 +1,12 @@
 # TeleNotify
 
-NOTE: Under development. None of these instructions are working yet.
+TeleNotify by [ppati000](http://twitter.com/ppati000) enables your Rails app to send notifications/messages to your users via Telegram's Bot API. Forget email newsletters!
+
+A working demo can be tested [here](http://telenotify.herokuapp.com/). For the source, see the [TeleTest repository](https://github.com/ppati000/TeleTest/)
 
 ## Installation
+
+Note: For any news, questions, suggestions or anything else, contact and/or follow me on [Twitter](http://twitter.com/ppati000) or send me a [mail](mailto:ppati000@me.com)
 
 ### Prerequisites
 
@@ -101,7 +105,17 @@ TeleNotify::TelegramUser.send_message_to_all("Check out our new stuff!")
 
 ## Testing
 
+All testing is currently here: [TeleTest repository](https://github.com/ppati000/TeleTest/)
+
 ## Changes
+
+0.1
+
+  * Initial release
+
+## Contributing
+
+  Fork it. Commit your changes. Make a pull request :)
 
 ## License
 
