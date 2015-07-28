@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+
+  post '/66381462:AAG1q2brO6DcXnmmn70HwBMw9ReYhS-bF8Y' => 'application#webhook'
+  get '/message' => 'some#message'
+  post '/send_message_to_all' => 'some#send_message_to_all'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'some#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

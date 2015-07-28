@@ -8,11 +8,16 @@ module TeleNotify
 
     @@next_update_id = 0
 
+    def self.configure_home_url(url)
+      @@home_url = url
+    end
+
     def self.configure_token(token)
       if token =~ /^[0-9]+:[\w-]+$/ #hacker proof
         @@token = token
         @@url = "https://api.telegram.org/bot" + token + "/"
-        RestClient.post(@@url + "setWebhook", { url: "https://42ebfa35.ngrok.io/route" })
+        @@callback_url = @@home_url + "/" + @@token
+        RestClient.post(@@url + "setWebhook", { url: @@callback_url })
       else
         raise "Invalid token! Please add a valid Telegram token in config/initializers/tele_notify.rb or see https://github.com/ppati000/tele_notify for further instructions."
       end
