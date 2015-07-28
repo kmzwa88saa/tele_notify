@@ -1,5 +1,6 @@
-PATH
-  remote: ../..
+GIT
+  remote: git://github.com/ppati000/tele_notify.git
+  revision: 33288771a2a999a2376a3e6b5176b245b24b4cbd
   specs:
     tele_notify (0.0.5.19)
       rest-client (~> 2.0.0.rc1)
