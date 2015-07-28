@@ -27,5 +27,9 @@ module TeleNotify
         migration_template 'migration.rb', 'db/migrate/tele_notify_migration.rb'
       end
     end
+
+    def copy_initializer
+      copy_file 'tele_notify.rb', 'config/initializers/tele_notify.rb'
+    end
   end
 end
