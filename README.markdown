@@ -9,6 +9,7 @@ NOTE: Under development. None of these instructions are working yet.
 Just add the following to your Gemfile.
 
 ```ruby
+#Gemfile
 gem 'tele_notify', '~> 0.1'
 ```
 
@@ -25,6 +26,7 @@ generate and run the migration just use.
 Next, make your ApplicationController look like this:
 
 ```ruby
+#app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -39,6 +41,7 @@ end
 Last but not least, add a callback URL for telegram in ```config/routes.rb```, which must be the same as your token.
 
 ```ruby
+#config/routes.rb
 Rails.application.routes.draw do
   post '/<your token>' => 'application#webhook'
 end
