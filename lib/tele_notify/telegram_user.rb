@@ -14,20 +14,7 @@ module TeleNotify
         @@url = "https://api.telegram.org/bot" + token + "/"
         RestClient.post(@@url + "setWebhook", { url: "https://42ebfa35.ngrok.io/route" })
       else
-        raise "Invalid token."
-      end
-    end
-
-    def self.get_updates
-      puts @@next_update_id
-      response = JSON.parse(RestClient.post(@@url + "getUpdates", { offset: @@next_update_id }), { symbolize_names: true })
-      puts response
-      if response[:ok]
-        updates = response[:result]
-        updates.each do |update|
-          self.create( { telegram_id: update[:message][:from][:id], first_name: update[:message][:from][:first_name] } )
-          @@next_update_id = update[:update_id] + 1
-        end
+        raise "Invalid token! Please add a valid Telegram token in config/initializers/tele_notify.rb or see https://github.com/ppati000/tele_notify for further instructions."
       end
     end
 
