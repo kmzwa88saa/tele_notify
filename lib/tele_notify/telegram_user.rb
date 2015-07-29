@@ -47,7 +47,6 @@ module TeleNotify
 
     def send_message(text)
       response = JSON.parse(RestClient.post(@@url + "sendMessage", chat_id: self.telegram_id, text: text), { symbolize_names: true })
-      self.destroy if !response[:ok]
       response[:ok]
     end
 
