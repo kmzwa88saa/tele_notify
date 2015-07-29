@@ -19,7 +19,7 @@ Just add the following to your Gemfile.
 
 ```ruby
 #Gemfile
-gem 'tele_notify', '~> 0.1'
+gem 'tele_notify', '~> 0.1.1'
 ```
 
 And follow that up with a ``bundle install``.
@@ -109,7 +109,7 @@ All testing is currently here: [TeleTest repository](https://github.com/ppati000
 
 ## Changes
 
-0.1
+0.1.1
 
   * Initial release
 
