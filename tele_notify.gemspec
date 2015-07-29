@@ -8,9 +8,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["ppati000", "Ryan"]
   s.email       = ["ppati000@me.com"]
-  s.homepage    = "http://rubygems.org/gems/tele_notify"
-  s.summary     = %q{Rails gem to allowing records to be votable}
-  s.description = %q{Rails gem to allowing records to be votable}
+  s.homepage    = "https://github.com/ppati000/tele_notify"
+  s.summary     = "Rails gem to send notifications via Telegram"
+  s.description = "TeleNotify by {ppati000}[http://twitter.com/ppati000] enables your Rails app to send notifications/messages to your users via Telegram's Bot API. Forget email newsletters!
+
+  *See installation instructions and source on {GitHub}[https://github.com/ppati000/tele_notify].*
+
+A working demo can be tested {here}[http://telenotify.herokuapp.com/]. For the demo app source, see the {TeleTest repository}[https://github.com/ppati000/TeleTest/]"
 
   s.rubyforge_project = "acts_as_votable"
 
