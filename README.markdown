@@ -13,6 +13,8 @@ Note: For any news, questions, suggestions or anything else, contact and/or foll
 Needless to say, you need a Telegram bot account first. To generate a new Telegram bot, message [@botfather](https://telegram.me/botfather) on Telegram. For more information, see the [official guide](https://core.telegram.org/bots#botfather).
 During this process, you will obtain a token which you will need in the following steps.
 
+Your app must have HTTPS enabled.
+
 ### Install
 
 Just add the following to your Gemfile.
@@ -51,6 +53,13 @@ TeleNotify::TelegramUser.configure_dev_url("YOUR NGROK DEVELOPMENT URL")
 TeleNotify::TelegramUser.configure_token("YOUR TOKEN")
 ```
 
+[Set webhook](https://core.telegram.org/bots/api#setwebhook), so bot will know where to send user data:
+
+```
+https://api.telegram.org/bot<TOKEN>/setWebHook?url=https://<EXAMPLE.COM>/<TOKEN>
+{"ok":true,"result":true,"description":"Webhook was set"}
+```
+
 Next, add two lines of code to make your ApplicationController look like this:
 
 ```ruby
@@ -75,7 +84,7 @@ Rails.application.routes.draw do
 end
 ```
 
-Now that everything is done, you can finally run ```rake db:migrate```. Congratulations! Yout successfully installed TeleNotify!
+Now that everything is done, you can finally run ```bundle exec rake db:migrate``` and restart server. Congratulations! You successfully installed TeleNotify!
 
 ## Using TeleNotify
 
