@@ -5,6 +5,7 @@ class TeleNotifyMigration < ActiveRecord::Migration
       t.integer :telegram_id
       t.string :first_name
       t.string :username
+      t.string :last_name
 
       t.timestamps
     end
