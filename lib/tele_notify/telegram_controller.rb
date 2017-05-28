@@ -7,7 +7,7 @@ module TeleNotify
                                       username: params[:message][:from][:username],
                                       last_name: params[:message][:from][:last_name]})
         if user
-          user.send_message("Notifications are now active. To cancel, stop this bot in Telegram.")
+          # user.send_message("Notifications are now active. To cancel, stop this bot in Telegram.")
         end
         render :nothing => true, :status => :ok
       end
